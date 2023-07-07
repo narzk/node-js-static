@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    <style>
+      .active {
+        background-color: #000;
+      }
+      ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-start;
+        padding: 0;
+      }
+      li {
+        margin-right: 8px;
+        background-color: #ccc;
+        padding: 8px;
+        border-radius: 10px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li id="home"><a href="/">home</a></li>
+          <li id="about"><a href="/about">about</a></li>
+          <li id="contactMe"><a href="/contact-me">contact me</a></li>
+        </ul>
+      </nav>
+      <h1>About Us</h1>
+      <p>This is the about page content.</p>
+    </div>
+  </body>
+  <script>
+    const path = window.location.pathname;
+    const homeElement = document.getElementById("home");
+    const aboutElement = document.getElementById("about");
+    const contactMeElement = document.getElementById("contactMe");
+
+    if (path === "/about") aboutElement.classList.add("active");
+  </script>
+</html>

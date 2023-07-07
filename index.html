@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home</title>
+    <style>
+      .active {
+        background-color: #000;
+      }
+      ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-start;
+        padding: 0;
+      }
+      li {
+        margin-right: 8px;
+        background-color: #ccc;
+        padding: 8px;
+        border-radius: 10px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:active {
+        background-color: white;
+      }
+      body {
+        font-family: 'Bacasime Antique', serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+      }
+      h1 {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li id="home"><a href="/">home</a></li>
+          <li id="about"><a href="/about">about</a></li>
+          <li id="contactMe"><a href="/contact-me">contact me</a></li>
+        </ul>
+      </nav>
+      <h1>Welcome to the ForMe</h1>
+      <p>
+        ForMe is an innovative company that prides itself on providing
+        individuals with a continuous stream of good vibe information. In a
+        world filled with stress, negativity, and overwhelming news cycles,
+        ForMe recognizes the importance of uplifting and positive content to
+        improve mental well-being. Through a variety of platforms, including a
+        website, mobile app, and social media presence, ForMe delivers an
+        abundance of content aimed at promoting happiness, self-care, personal
+        growth, and overall positivity.
+      </p>
+      <p>
+        One of the key aspects that sets ForMe apart is its commitment to
+        curating a diverse range of good vibe information. Whether it's
+        inspiring stories, heartwarming videos, motivational quotes, or wellness
+        tips, ForMe ensures that there is something for everyone. By offering a
+        wide array of content, ForMe caters to different interests and
+        preferences, creating a personalized experience that resonates with
+        individuals on a deeper level.
+      </p>
+      <p>
+        ForMe understands that good vibes are not just about temporary moments
+        of joy, but a holistic approach to well-being. Through their content,
+        ForMe encourages individuals to cultivate positive habits and attitudes
+        that can have a lasting impact on their lives. From articles on
+        mindfulness and meditation to tips for maintaining healthy
+        relationships, ForMe provides practical tools and guidance that empower
+        individuals to lead more fulfilling and meaningful lives.
+      </p>
+      <p>
+        In addition to delivering good vibe information, ForMe fosters a vibrant
+        and inclusive community. Through their social media platforms, ForMe
+        encourages individuals to connect, share their experiences, and support
+        each other. By building a community of like-minded individuals, ForMe
+        creates a safe space where people can find solace, inspiration, and
+        motivation in the company of others who are also seeking positivity and
+        personal growth.
+      </p>
+      <p>
+        Overall, ForMe is a beacon of light in a world that can sometimes feel
+        overwhelming. Through its curated content, commitment to personal
+        well-being, and vibrant community, ForMe brings forth a continuous
+        stream of good vibe information that uplifts, empowers, and guides
+        individuals towards a happier and more positive life.
+      </p>
+    </div>
+  </body>
+  <script>
+    const path = window.location.pathname;
+    const homeElement = document.getElementById("home");
+    const aboutElement = document.getElementById("about");
+    const contactMeElement = document.getElementById("contactMe");
+    console.log("path", path);
+    if (path === "/") homeElement.classList.add("active");
+  </script>
+</html>
