@@ -1,29 +1,21 @@
-const http = require('http');
-const fs = require('fs');
+const express = require("express");
+const app = express();
+const { readFile } = require("fs").promises;
 
-const server = http.createServer((req, res) => {
-  let filePath = './404.html';
-
-  if (req.url === '/' || req.url === '/index.html') {
-    filePath = './index.html';
-  } else if (req.url === '/about') {
-    filePath = './about.html';
-  } else if (req.url === '/contact-me') {
-    filePath = './contact-me.html';
-  }
-
-  fs.readFile(filePath, (err, content) => {
-    if (err) {
-      res.writeHead(404);
-      res.end('File not found');
-    } else {
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(content);
-    }
-  });
+app.get("/", async (request, response) => {
+  response.send(await readFile("./index.html", "utf8"));
 });
 
-const port = 8080;
-server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.get("/about", async (request, response) => {
+  response.send(await readFile("./about.html", "utf8"));
 });
+
+app.get("/contact-me", async (request, response) => {
+  response.send(await readFile("./contact-me.html", "utf8"));
+});
+
+app.use(async (request, response) => {
+  response.status(404).send(await readFile("./404.html", "utf8"));
+});
+
+app.listen(8080, () => console.log(`App available on http://localhost:8080`));
